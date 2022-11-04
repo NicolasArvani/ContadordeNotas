@@ -15,10 +15,21 @@ namespace ContadordeNotas
         public Form1()
         {
             InitializeComponent();
-            
+            atualizarNotas(this.Notas);
         }
 
-        int[] Notas = {100,50,20,10,5,2,1};
+        //atualizar o listview de notas disponiveis
+        private void atualizarNotas(int[] Notas)
+        {
+            lvwTipoNota.Items.Clear();
+            for(int i = 0; i < Notas.Count(); i++)
+            {
+                lvwTipoNota.Items.Add(Notas[i].ToString());
+            }
+        }
+
+
+        int[] Notas = {100,50,20,10,5,2,1}; //vetor global de notas
 
         private void btnContarNotas_Click(object sender, EventArgs e)
         {
@@ -36,31 +47,34 @@ namespace ContadordeNotas
         {
             do
             {
-                pilha.Add(Notas[i]);
-                if(pilha.Sum() < valor)
+                pilha.Add(Notas[i]); //adiciona uma nota (atual) na pilha
+                if(pilha.Sum() < valor) //se o total for menor que o valor, chama outra funcao p/ adicionar uma nota nova
                 {
                     ContadordeNotas(valor, pilha, i);
                     pilha.RemoveAt(pilha.Count() - 1);
                 }
-                else if(pilha.Sum() > valor)
+                else if(pilha.Sum() > valor) //se for maior o valor, remove a nota da pilha
                 {
                     pilha.RemoveAt(pilha.Count() - 1);
                     
                 }
-                else if(pilha.Sum() == valor)
+                else if(pilha.Sum() == valor) //se for igual ao valor, entao eh uma solucao valida
                 {
-                    printPilha(pilha);
-                    pilha.RemoveAt(pilha.Count() - 1);
+                    printPilha(pilha); //printa no textbox
+                    pilha.RemoveAt(pilha.Count() - 1); //remove a nota da pilha
                     
                 }
-                i++;
-            } while (i < Notas.Count());
+                i++; //vai para a proxima nota de menor valor
+            } while (i < Notas.Count()); //faz o loop enquanto nao chegar na ultima nota
         }
-        private void printPilha(List<int> pilha)
+        //metodo pra colocar o resultado encontrado no textbox
+        private void printPilha(List<int> pilha) 
         {
             int[] somaNotas = new int[Notas.Count()];
+            //loop para ver todas as notas presentes na pilha e somar as iguais
             for(int i = 0; i < pilha.Count(); i++)
             {
+                //testa pra ver qual nota que eh
                 for (int j = 0; j < Notas.Count(); j++)
                 {
                     if (pilha[i] == Notas[j])
@@ -68,7 +82,7 @@ namespace ContadordeNotas
                 }
             }
 
-            
+            //printa as notas presentes
             for(int i = 0; i < Notas.Count(); i++)
             {
                 if (somaNotas[i] != 0)
@@ -78,6 +92,7 @@ namespace ContadordeNotas
 
             }
             txtOutput.AppendText("\r\n");
+            //adiciona no listview de resultado
             lvwNotas.Items.Add(somaNotas.Sum().ToString());
             for(int j = 0; j < Notas.Count(); j++)
             {

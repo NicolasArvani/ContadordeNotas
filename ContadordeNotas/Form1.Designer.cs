@@ -41,11 +41,15 @@
             this.qtd5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.qtd2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.qtd1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvwTipoNota = new System.Windows.Forms.ListView();
+            this.txtAddNota = new System.Windows.Forms.TextBox();
+            this.btnAddNota = new System.Windows.Forms.Button();
+            this.btnRemoverNota = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtInput
             // 
-            this.txtInput.Location = new System.Drawing.Point(12, 70);
+            this.txtInput.Location = new System.Drawing.Point(18, 49);
             this.txtInput.Name = "txtInput";
             this.txtInput.Size = new System.Drawing.Size(100, 20);
             this.txtInput.TabIndex = 0;
@@ -63,7 +67,7 @@
             // 
             // btnContarNotas
             // 
-            this.btnContarNotas.Location = new System.Drawing.Point(140, 70);
+            this.btnContarNotas.Location = new System.Drawing.Point(146, 49);
             this.btnContarNotas.Name = "btnContarNotas";
             this.btnContarNotas.Size = new System.Drawing.Size(82, 23);
             this.btnContarNotas.TabIndex = 2;
@@ -111,40 +115,87 @@
             // qtdNotas
             // 
             this.qtdNotas.Text = "Qtd Notas";
+            this.qtdNotas.Width = 105;
             // 
             // qtd100
             // 
             this.qtd100.Text = "100";
+            this.qtd100.Width = 38;
             // 
             // qtd50
             // 
             this.qtd50.Text = "50";
+            this.qtd50.Width = 29;
             // 
             // qtd20
             // 
             this.qtd20.Text = "20";
+            this.qtd20.Width = 32;
             // 
             // qtd10
             // 
             this.qtd10.Text = "10";
+            this.qtd10.Width = 32;
             // 
             // qtd5
             // 
             this.qtd5.Text = "5";
+            this.qtd5.Width = 29;
             // 
             // qtd2
             // 
             this.qtd2.Text = "2";
+            this.qtd2.Width = 27;
             // 
             // qtd1
             // 
             this.qtd1.Text = "1";
+            this.qtd1.Width = 32;
+            // 
+            // lvwTipoNota
+            // 
+            this.lvwTipoNota.HideSelection = false;
+            this.lvwTipoNota.Location = new System.Drawing.Point(18, 158);
+            this.lvwTipoNota.Name = "lvwTipoNota";
+            this.lvwTipoNota.Size = new System.Drawing.Size(193, 240);
+            this.lvwTipoNota.TabIndex = 5;
+            this.lvwTipoNota.UseCompatibleStateImageBehavior = false;
+            this.lvwTipoNota.View = System.Windows.Forms.View.List;
+            // 
+            // txtAddNota
+            // 
+            this.txtAddNota.Location = new System.Drawing.Point(18, 132);
+            this.txtAddNota.Name = "txtAddNota";
+            this.txtAddNota.Size = new System.Drawing.Size(100, 20);
+            this.txtAddNota.TabIndex = 6;
+            // 
+            // btnAddNota
+            // 
+            this.btnAddNota.Location = new System.Drawing.Point(124, 130);
+            this.btnAddNota.Name = "btnAddNota";
+            this.btnAddNota.Size = new System.Drawing.Size(87, 23);
+            this.btnAddNota.TabIndex = 7;
+            this.btnAddNota.Text = "Adicionar Nota";
+            this.btnAddNota.UseVisualStyleBackColor = true;
+            // 
+            // btnRemoverNota
+            // 
+            this.btnRemoverNota.Location = new System.Drawing.Point(124, 404);
+            this.btnRemoverNota.Name = "btnRemoverNota";
+            this.btnRemoverNota.Size = new System.Drawing.Size(87, 23);
+            this.btnRemoverNota.TabIndex = 8;
+            this.btnRemoverNota.Text = "Remover Nota";
+            this.btnRemoverNota.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRemoverNota);
+            this.Controls.Add(this.btnAddNota);
+            this.Controls.Add(this.txtAddNota);
+            this.Controls.Add(this.lvwTipoNota);
             this.Controls.Add(this.lvwNotas);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnContarNotas);
@@ -172,6 +223,10 @@
         private System.Windows.Forms.ColumnHeader qtd5;
         private System.Windows.Forms.ColumnHeader qtd2;
         private System.Windows.Forms.ColumnHeader qtd1;
+        private System.Windows.Forms.ListView lvwTipoNota;
+        private System.Windows.Forms.TextBox txtAddNota;
+        private System.Windows.Forms.Button btnAddNota;
+        private System.Windows.Forms.Button btnRemoverNota;
     }
 }
 
