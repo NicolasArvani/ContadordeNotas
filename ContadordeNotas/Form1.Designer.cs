@@ -41,11 +41,24 @@
             this.qtd5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.qtd2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.qtd1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvwTipoNota = new System.Windows.Forms.ListView();
+            this.txtAddNota = new System.Windows.Forms.TextBox();
+            this.btnAddNota = new System.Windows.Forms.Button();
+            this.btnRemoverNota = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetarNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.integrantesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtInput
             // 
-            this.txtInput.Location = new System.Drawing.Point(12, 70);
+            this.txtInput.Location = new System.Drawing.Point(18, 49);
             this.txtInput.Name = "txtInput";
             this.txtInput.Size = new System.Drawing.Size(100, 20);
             this.txtInput.TabIndex = 0;
@@ -54,7 +67,7 @@
             // 
             this.txtOutput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtOutput.Location = new System.Drawing.Point(281, 51);
+            this.txtOutput.Location = new System.Drawing.Point(280, 27);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
             this.txtOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -63,7 +76,7 @@
             // 
             // btnContarNotas
             // 
-            this.btnContarNotas.Location = new System.Drawing.Point(140, 70);
+            this.btnContarNotas.Location = new System.Drawing.Point(129, 49);
             this.btnContarNotas.Name = "btnContarNotas";
             this.btnContarNotas.Size = new System.Drawing.Size(82, 23);
             this.btnContarNotas.TabIndex = 2;
@@ -73,7 +86,8 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(702, 22);
+            this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClear.Location = new System.Drawing.Point(711, 415);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 3;
@@ -100,10 +114,10 @@
             this.lvwNotas.FullRowSelect = true;
             this.lvwNotas.GridLines = true;
             this.lvwNotas.HideSelection = false;
-            this.lvwNotas.Location = new System.Drawing.Point(281, 195);
+            this.lvwNotas.Location = new System.Drawing.Point(280, 134);
             this.lvwNotas.Name = "lvwNotas";
             this.lvwNotas.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lvwNotas.Size = new System.Drawing.Size(506, 243);
+            this.lvwNotas.Size = new System.Drawing.Size(506, 275);
             this.lvwNotas.TabIndex = 4;
             this.lvwNotas.UseCompatibleStateImageBehavior = false;
             this.lvwNotas.View = System.Windows.Forms.View.Details;
@@ -111,47 +125,175 @@
             // qtdNotas
             // 
             this.qtdNotas.Text = "Qtd Notas";
+            this.qtdNotas.Width = 105;
             // 
             // qtd100
             // 
             this.qtd100.Text = "100";
+            this.qtd100.Width = 38;
             // 
             // qtd50
             // 
             this.qtd50.Text = "50";
+            this.qtd50.Width = 29;
             // 
             // qtd20
             // 
             this.qtd20.Text = "20";
+            this.qtd20.Width = 32;
             // 
             // qtd10
             // 
             this.qtd10.Text = "10";
+            this.qtd10.Width = 32;
             // 
             // qtd5
             // 
             this.qtd5.Text = "5";
+            this.qtd5.Width = 29;
             // 
             // qtd2
             // 
             this.qtd2.Text = "2";
+            this.qtd2.Width = 27;
             // 
             // qtd1
             // 
             this.qtd1.Text = "1";
+            this.qtd1.Width = 32;
+            // 
+            // lvwTipoNota
+            // 
+            this.lvwTipoNota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.lvwTipoNota.HideSelection = false;
+            this.lvwTipoNota.Location = new System.Drawing.Point(18, 158);
+            this.lvwTipoNota.Name = "lvwTipoNota";
+            this.lvwTipoNota.Size = new System.Drawing.Size(193, 240);
+            this.lvwTipoNota.TabIndex = 5;
+            this.lvwTipoNota.UseCompatibleStateImageBehavior = false;
+            this.lvwTipoNota.View = System.Windows.Forms.View.List;
+            // 
+            // txtAddNota
+            // 
+            this.txtAddNota.Location = new System.Drawing.Point(18, 132);
+            this.txtAddNota.Name = "txtAddNota";
+            this.txtAddNota.Size = new System.Drawing.Size(100, 20);
+            this.txtAddNota.TabIndex = 6;
+            // 
+            // btnAddNota
+            // 
+            this.btnAddNota.Location = new System.Drawing.Point(124, 130);
+            this.btnAddNota.Name = "btnAddNota";
+            this.btnAddNota.Size = new System.Drawing.Size(87, 23);
+            this.btnAddNota.TabIndex = 7;
+            this.btnAddNota.Text = "Adicionar Nota";
+            this.btnAddNota.UseVisualStyleBackColor = true;
+            this.btnAddNota.Click += new System.EventHandler(this.btnAddNota_Click);
+            // 
+            // btnRemoverNota
+            // 
+            this.btnRemoverNota.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRemoverNota.Location = new System.Drawing.Point(124, 415);
+            this.btnRemoverNota.Name = "btnRemoverNota";
+            this.btnRemoverNota.Size = new System.Drawing.Size(87, 23);
+            this.btnRemoverNota.TabIndex = 8;
+            this.btnRemoverNota.Text = "Remover Nota";
+            this.btnRemoverNota.UseVisualStyleBackColor = true;
+            this.btnRemoverNota.Click += new System.EventHandler(this.btnRemoverNota_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arquivoToolStripMenuItem,
+            this.sobreToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 9;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // arquivoToolStripMenuItem
+            // 
+            this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.resetarNotasToolStripMenuItem,
+            this.sairToolStripMenuItem});
+            this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.arquivoToolStripMenuItem.Text = "Arquivo";
+            // 
+            // sobreToolStripMenuItem
+            // 
+            this.sobreToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.integrantesToolStripMenuItem});
+            this.sobreToolStripMenuItem.Name = "sobreToolStripMenuItem";
+            this.sobreToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.sobreToolStripMenuItem.Text = "Sobre";
+            // 
+            // resetarNotasToolStripMenuItem
+            // 
+            this.resetarNotasToolStripMenuItem.Name = "resetarNotasToolStripMenuItem";
+            this.resetarNotasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetarNotasToolStripMenuItem.Text = "Resetar Notas";
+            this.resetarNotasToolStripMenuItem.Click += new System.EventHandler(this.resetarNotasToolStripMenuItem_Click);
+            // 
+            // integrantesToolStripMenuItem
+            // 
+            this.integrantesToolStripMenuItem.Name = "integrantesToolStripMenuItem";
+            this.integrantesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.integrantesToolStripMenuItem.Text = "Integrantes";
+            this.integrantesToolStripMenuItem.Click += new System.EventHandler(this.integrantesToolStripMenuItem_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Location = new System.Drawing.Point(8, 111);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(217, 335);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Notas Utilizadas";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Location = new System.Drawing.Point(8, 27);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(213, 62);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Contador de Notas";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lvwNotas);
             this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnRemoverNota);
+            this.Controls.Add(this.btnAddNota);
+            this.Controls.Add(this.txtAddNota);
+            this.Controls.Add(this.lvwTipoNota);
+            this.Controls.Add(this.lvwNotas);
             this.Controls.Add(this.btnContarNotas);
             this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.txtInput);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
+            this.MainMenuStrip = this.menuStrip1;
+            this.MinimumSize = new System.Drawing.Size(816, 489);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Contador de Notas";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,6 +314,18 @@
         private System.Windows.Forms.ColumnHeader qtd5;
         private System.Windows.Forms.ColumnHeader qtd2;
         private System.Windows.Forms.ColumnHeader qtd1;
+        private System.Windows.Forms.ListView lvwTipoNota;
+        private System.Windows.Forms.TextBox txtAddNota;
+        private System.Windows.Forms.Button btnAddNota;
+        private System.Windows.Forms.Button btnRemoverNota;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sobreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem resetarNotasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem integrantesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 
