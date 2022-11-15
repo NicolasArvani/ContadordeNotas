@@ -26,22 +26,62 @@ namespace ContadordeNotas
             {
                 lvwTipoNota.Items.Add(Notas[i].ToString());
             }
+            lvwNotas.Columns.Clear();
+            lvwNotas.Columns.Add("Qtd Notas");
+            for (int i = 0; i < Notas.Count(); i++)
+            {
+                lvwNotas.Columns.Add(Notas[i].ToString());
+            }
+            
         }
 
 
-        int[] Notas = {100,50,20,10,5,2,1}; //vetor global de notas
+        int[] Notas = {100,50,30,20,10,5,2,1}; //vetor global de notas
+        
 
         private void btnContarNotas_Click(object sender, EventArgs e)
         {
+            lvwNotas.Items.Clear();
             int valor = int.Parse(txtInput.Text);
             ContarNotas(valor);
             txtOutput.AppendText("\r\n");
+            txtOutput.AppendText("Quantidade de Possibilidades: " + lvwNotas.Items.Count.ToString() + "\r\n");
+            if(lvwNotas.Items.Count > 0)
+            {
+                int menorQtd = int.MaxValue;
+                int indiceMenor=0;
+                for(int i = 0; i < lvwNotas.Items.Count; i++)
+                {
+                    if (int.Parse(lvwNotas.Items[i].SubItems[0].Text) < menorQtd)
+                    {
+                        menorQtd = int.Parse(lvwNotas.Items[i].SubItems[0].Text);
+                        indiceMenor = i;
+                    }
+                }
+                txtOutput.AppendText("Menor qtd de Notas: " + menorQtd.ToString() + ", Sendo: \r\n");
+                for(int i = 1; i < Notas.Count()+1; i++)
+                {
+                    if (lvwNotas.Items[indiceMenor].SubItems[i].Text != "0")
+                    {
+                        txtOutput.AppendText(lvwNotas.Items[indiceMenor].SubItems[i].Text + " nota(s) de R$" + Notas[i - 1] + ", ");
+                    }
+                }
+            
+                txtOutput.AppendText("\r\n");
+            }
+            else
+            {
+                txtOutput.AppendText("Não há possibilidades de notas para o valor informado");
+            }
+            
+            
         }
 
         private void ContarNotas(int valor)
         {
             List<int> pilha = new List<int>();
             ContadordeNotas(valor, pilha, 0);
+            
         }
         private void ContadordeNotas(int valor, List<int> pilha, int i)
         {
@@ -105,6 +145,48 @@ namespace ContadordeNotas
         {
             txtOutput.Clear();
             lvwNotas.Items.Clear();
+        }
+
+        private void btnRemoverNota_Click(object sender, EventArgs e)
+        {
+            if (lvwTipoNota.SelectedItems.Count > 0)
+            {
+                int index = lvwTipoNota.SelectedIndices[0];
+                List<int> notas = Notas.ToList();
+                notas.RemoveAt(index);
+                Notas = notas.ToArray();
+                atualizarNotas(Notas);
+            }
+
+        }
+
+        private void btnAddNota_Click(object sender, EventArgs e)
+        {
+            int nota = int.Parse(txtAddNota.Text);
+            List<int> notas = Notas.ToList();
+            notas.Add(nota);
+            Notas = notas.ToArray();
+            Array.Sort(Notas);
+            Array.Reverse(Notas);
+            atualizarNotas(Notas);
+
+        }
+
+        private void resetarNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Notas = new int[] { 100,50,30,20,10,5,2,1};
+            atualizarNotas(Notas);
+        }
+
+        private void integrantesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Sobre sobre = new Sobre();
+            sobre.Show();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
