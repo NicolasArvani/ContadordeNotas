@@ -41,7 +41,7 @@ namespace ContadordeNotas
 
         private void btnContarNotas_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtInput.Text))
+            if (String.IsNullOrEmpty(txtInput.Text) || txtInput.Text.Any(char.IsLetter))
                 return;
             
             lvwNotas.Items.Clear();
@@ -159,7 +159,7 @@ namespace ContadordeNotas
         
         private void btnAddNota_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtAddNota.Text))
+            if (String.IsNullOrEmpty(txtAddNota.Text) || txtAddNota.Text.Any(char.IsLetter))
                 return;
             int nota = int.Parse(txtAddNota.Text);
             List<int> notas = Notas.ToList();
