@@ -96,9 +96,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(7, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(418, 25);
+            this.label1.Size = new System.Drawing.Size(423, 25);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Fibonacci Recursivo e com Lista Dinâmica";
+            this.label1.Text = "Contador de Notas Utilizando Backtracking";
             // 
             // groupBox1
             // 
