@@ -35,9 +35,7 @@ namespace ContadordeNotas
             
         }
 
-
         int[] Notas = {100,50,30,10,5,2,1}; //vetor global de notas
-        
 
         private void btnContarNotas_Click(object sender, EventArgs e)
         {
@@ -86,6 +84,7 @@ namespace ContadordeNotas
             ContadordeNotas(valor, pilha, 0);
             
         }
+        
         private void ContadordeNotas(int valor, List<int> pilha, int i)
         {
             do
@@ -99,21 +98,18 @@ namespace ContadordeNotas
                 else if(pilha.Sum() > valor) //se for maior o valor, remove a nota da pilha
                 {
                     pilha.RemoveAt(pilha.Count() - 1);
-                    
                 }
                 else if(pilha.Sum() == valor) //se for igual ao valor, entao eh uma solucao valida
                 {
-                    //printPilha(pilha); //printa no textbox
                     printPilha(pilha);
-                    pilha.RemoveAt(pilha.Count() - 1); //remove a nota da pilha
-                    
+                    pilha.RemoveAt(pilha.Count() - 1); //remove a nota da pilha  
                 }
                 i++; //vai para a proxima nota de menor valor
             } while (i < Notas.Count()); //faz o loop enquanto nao chegar na ultima nota
         }
-        //metodo pra colocar o resultado encontrado no textbox
 
         
+        //metodo pra colocar o resultado encontrado no textbox
         private void printPilha(List<int> pilha)
         {
             List<int> aux;
@@ -132,10 +128,7 @@ namespace ContadordeNotas
             {
                 lvwNotas.Items[lvwNotas.Items.Count - 1].SubItems.Add(somaNotas[j].ToString());
             }
-        }
-
-        
-        
+        }        
 
         private void btnClear_Click(object sender, EventArgs e)
         {
@@ -155,7 +148,6 @@ namespace ContadordeNotas
             }
 
         }
-
         
         private void btnAddNota_Click(object sender, EventArgs e)
         {
@@ -186,6 +178,21 @@ namespace ContadordeNotas
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter){
+                btnContarNotas_Click(this, new EventArgs());
+            }
+        }
+
+        private void txtAddNota_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnAddNota_Click(this, new EventArgs());
+            }
         }
     }
 }

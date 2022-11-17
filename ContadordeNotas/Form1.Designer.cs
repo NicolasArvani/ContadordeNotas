@@ -67,6 +67,7 @@
             this.txtInput.Name = "txtInput";
             this.txtInput.Size = new System.Drawing.Size(100, 20);
             this.txtInput.TabIndex = 0;
+            this.txtInput.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInput_KeyDown);
             // 
             // txtOutput
             // 
@@ -182,6 +183,7 @@
             this.txtAddNota.Name = "txtAddNota";
             this.txtAddNota.Size = new System.Drawing.Size(100, 20);
             this.txtAddNota.TabIndex = 6;
+            this.txtAddNota.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtAddNota_KeyDown);
             // 
             // btnAddNota
             // 
